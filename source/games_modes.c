@@ -15,31 +15,31 @@ void Play_with_another_player(SDL_Window* window, SDL_Renderer* renderer, PadSta
     SDL_Surface *Map = IMG_Load("data/map.png");
     CheckImages(Map, window, renderer);
     SDL_Texture *MapTexture = SDL_CreateTextureFromSurface(renderer, Map);
-    SDL_FreeSurface(Map);
     CheckTexture(MapTexture, window, renderer);
     SDL_Rect MapRect = { 0, 0, Map->w, Map->h };
-
+    SDL_FreeSurface(Map);
+    
     SDL_Surface *RaquetteGauche = IMG_Load("data/raquette_1.png");
     CheckImages(RaquetteGauche, window, renderer);
     SDL_Texture *RaquetteGaucheTexture = SDL_CreateTextureFromSurface(renderer, RaquetteGauche);
-    SDL_FreeSurface(RaquetteGauche);
     CheckTexture(RaquetteGaucheTexture, window, renderer);
     SDL_Rect RaquetteGaucheRect = { 0, Y_RACKET, RaquetteGauche->w, RaquetteGauche->h };
+        SDL_FreeSurface(RaquetteGauche);
     
     SDL_Surface *RaquetteDroite = IMG_Load("data/raquette_2.png");
     CheckImages(RaquetteDroite, window, renderer);
     SDL_Texture *RaquetteDroiteTexture = SDL_CreateTextureFromSurface(renderer, RaquetteDroite);
-    SDL_FreeSurface(RaquetteDroite);
     CheckTexture(RaquetteDroiteTexture, window, renderer);
     SDL_Rect RaquetteDroiteRect = { SCREEN_W - RACKET_WIDTH, Y_RACKET, RaquetteDroite->w, RaquetteDroite->h };
-
+    SDL_FreeSurface(RaquetteDroite);
+    
     SDL_Surface *Ball = IMG_Load("data/ball.png");
     CheckImages(Ball, window, renderer);
     SDL_Texture *BallTexture = SDL_CreateTextureFromSurface(renderer, Ball);
-    SDL_FreeSurface(Ball);
     CheckTexture(BallTexture, window, renderer);
     SDL_Rect BallRect = { SCREEN_W/2 - BALL_SIDE/2, SCREEN_H/2 - BALL_SIDE/2, Ball->w, Ball->h };
-
+    SDL_FreeSurface(Ball);
+    
     SDL_Rect Score_1Rect = {756, 150, 0, 0};
     SDL_Rect Score_2Rect = {480, 150, 0, 0};
 
@@ -153,31 +153,31 @@ void Unbeatable_AI(SDL_Window* window, SDL_Renderer* renderer, PadState pad, SDL
     SDL_Surface *Map = IMG_Load("data/map.png");
     CheckImages(Map, window, renderer);
     SDL_Texture *MapTexture = SDL_CreateTextureFromSurface(renderer, Map);
-    SDL_FreeSurface(Map);
     CheckTexture(MapTexture, window, renderer);
     SDL_Rect MapRect = { 0, 0, Map->w, Map->h };
-
+    SDL_FreeSurface(Map);
+    
     SDL_Surface *RaquetteGauche = IMG_Load("data/raquette_1.png");
     CheckImages(RaquetteGauche, window, renderer);
     SDL_Texture *RaquetteGaucheTexture = SDL_CreateTextureFromSurface(renderer, RaquetteGauche);
-    SDL_FreeSurface(RaquetteGauche);
     CheckTexture(RaquetteGaucheTexture, window, renderer);
     SDL_Rect RaquetteGaucheRect = { 0, Y_RACKET, RaquetteGauche->w, RaquetteGauche->h };
+        SDL_FreeSurface(RaquetteGauche);
     
     SDL_Surface *RaquetteDroite = IMG_Load("data/raquette_2.png");
     CheckImages(RaquetteDroite, window, renderer);
     SDL_Texture *RaquetteDroiteTexture = SDL_CreateTextureFromSurface(renderer, RaquetteDroite);
-    SDL_FreeSurface(RaquetteDroite);
     CheckTexture(RaquetteDroiteTexture, window, renderer);
     SDL_Rect RaquetteDroiteRect = { SCREEN_W - RACKET_WIDTH, Y_RACKET, RaquetteDroite->w, RaquetteDroite->h };
-
+    SDL_FreeSurface(RaquetteDroite);
+    
     SDL_Surface *Ball = IMG_Load("data/ball.png");
     CheckImages(Ball, window, renderer);
     SDL_Texture *BallTexture = SDL_CreateTextureFromSurface(renderer, Ball);
-    SDL_FreeSurface(Ball);
     CheckTexture(BallTexture, window, renderer);
     SDL_Rect BallRect = { SCREEN_W/2 - BALL_SIDE/2, SCREEN_H/2 - BALL_SIDE/2, Ball->w, Ball->h };
-
+    SDL_FreeSurface(Ball);
+    
     SDL_Rect Score_1Rect = {756, 150, 0, 0};
     SDL_Rect Score_2Rect = {480, 150, 0, 0};
 
@@ -284,24 +284,24 @@ void Play_against_wall(SDL_Window* window, SDL_Renderer* renderer, PadState pad,
     SDL_Surface *Map = IMG_Load("data/map.png");
     CheckImages(Map, window, renderer);
     SDL_Texture *MapTexture = SDL_CreateTextureFromSurface(renderer, Map);
-    SDL_FreeSurface(Map);
     CheckTexture(MapTexture, window, renderer);
     SDL_Rect MapRect = { 0, 0, Map->w, Map->h };
-
+    SDL_FreeSurface(Map);
+    
     SDL_Surface *Raquette = IMG_Load("data/raquette.png");
     CheckImages(Raquette, window, renderer);
     SDL_Texture *RaquetteTexture = SDL_CreateTextureFromSurface(renderer, Raquette);
-    SDL_FreeSurface(Raquette);
     CheckTexture(RaquetteTexture, window, renderer);
     SDL_Rect RaquetteRect = { SCREEN_W / 2 - Raquette->w/2, SCREEN_H - Raquette->h, Raquette->w, Raquette->h };
-
+    SDL_FreeSurface(Raquette);
+    
     SDL_Surface *Ball = IMG_Load("data/ball.png");
     CheckImages(Ball, window, renderer);
     SDL_Texture *BallTexture = SDL_CreateTextureFromSurface(renderer, Ball);
-    SDL_FreeSurface(Ball);
     CheckTexture(BallTexture, window, renderer);
     SDL_Rect BallRect = { SCREEN_W/2 - BALL_SIDE/2, SCREEN_H/2 - BALL_SIDE/2, Ball->w, Ball->h };
-
+    SDL_FreeSurface(Ball);
+    
     ballInit(&BallRect, speed);
 
     Mix_Chunk* Bond = Mix_LoadWAV("data/sound/Bond.wav");
