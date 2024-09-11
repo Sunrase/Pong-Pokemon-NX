@@ -25,87 +25,87 @@ void MainMenu(SDL_Window* window, SDL_Renderer* renderer, PadState pad, TTF_Font
     SDL_Surface *Menu_Top = IMG_Load("data/Menu_Top.png");
     CheckImages(Menu_Top, window, renderer);
     SDL_Texture *Menu_TopTexture = SDL_CreateTextureFromSurface(renderer, Menu_Top);
-    SDL_FreeSurface(Menu_Top);
     CheckTexture(Menu_TopTexture, window, renderer);
     SDL_Rect Menu_TopRect = { 0, 0, Menu_Top->w, Menu_Top->h };
-
+    SDL_FreeSurface(Menu_Top);
+    
     SDL_Surface *Menu_L1 = IMG_Load("data/Menu_L1.png");
     CheckImages(Menu_L1, window, renderer);
     SDL_Texture *Menu_L1Texture = SDL_CreateTextureFromSurface(renderer, Menu_L1);
-    SDL_FreeSurface(Menu_L1);
     CheckTexture(Menu_L1Texture, window, renderer);
     SDL_Rect Menu_L1Rect = { (SCREEN_W - Menu_L1->w) / 2 - 20, 20, Menu_L1->w, Menu_L1->h };
-
+    SDL_FreeSurface(Menu_L1);
+    
     SDL_Surface *Menu_L2 = IMG_Load("data/Menu_L2.png");
     CheckImages(Menu_L2, window, renderer);
     SDL_Texture *Menu_L2Texture = SDL_CreateTextureFromSurface(renderer, Menu_L2);
-    SDL_FreeSurface(Menu_L2);
     CheckTexture(Menu_L2Texture, window, renderer);
     SDL_Rect Menu_L2Rect = { (SCREEN_W - Menu_L2->w) / 2, Menu_L1Rect.h + 90, Menu_L2->w, Menu_L2->h };
+        SDL_FreeSurface(Menu_L2);
     
     SDL_Surface *Menu_L3 = IMG_Load("data/Menu_L3.png");
     CheckImages(Menu_L3, window, renderer);
     SDL_Texture *Menu_L3Texture = SDL_CreateTextureFromSurface(renderer, Menu_L3);
-    SDL_FreeSurface(Menu_L3);
     CheckTexture(Menu_L3Texture, window, renderer);
     SDL_Rect Menu_L3Rect = { (SCREEN_W - Menu_L3->w) / 2, Menu_L1Rect.h + Menu_L2Rect.h + 160, Menu_L3->w, Menu_L3->h };
-
+    SDL_FreeSurface(Menu_L3);
+    
     SDL_Surface *Menu_L2n2 = IMG_Load("data/Menu_L2.png");
     CheckImages(Menu_L2n2, window, renderer);
     SDL_Texture *Menu_L2n2Texture = SDL_CreateTextureFromSurface(renderer, Menu_L2n2);
-    SDL_FreeSurface(Menu_L2n2);
     CheckTexture(Menu_L2n2Texture, window, renderer);
     SDL_Rect Menu_L2n2Rect = { (SCREEN_W - Menu_L2Rect.w) / 2, Menu_L1Rect.h + Menu_L2Rect.h + Menu_L3Rect.h + 230, Menu_L2n2->w, Menu_L2n2->h };
-
+    SDL_FreeSurface(Menu_L2n2);
+    
     SDL_Surface *Pointer = IMG_Load("data/pointer.png");
     CheckImages(Pointer, window, renderer);
     SDL_Texture *PointerTexture = SDL_CreateTextureFromSurface(renderer, Pointer);
-    SDL_FreeSurface(Pointer);
     CheckTexture(PointerTexture, window, renderer);
     SDL_Rect PointerRect = { Menu_L1Rect.x + (Pointer->w / 2), Menu_L1Rect.h + 110, Pointer->w, Pointer->h };
-
+    SDL_FreeSurface(Pointer);
+    
     SDL_Surface* CGMSurface = TTF_RenderText_Solid(font, "Choose a game mode :", textColor);
     CheckTextSurface(CGMSurface, window, renderer, font);
     SDL_Texture* CGMTexture = SDL_CreateTextureFromSurface(renderer, CGMSurface);
-    SDL_FreeSurface(CGMSurface);
     CheckTextTexture(CGMTexture, window, renderer, font);
     SDL_Rect CGMRect = {(SCREEN_W - Menu_L1Rect.w) / 2 + 15, 40, CGMSurface->w, CGMSurface->h};
-
+    SDL_FreeSurface(CGMSurface);
+    
     SDL_Surface* PWAPSurface = TTF_RenderText_Solid(font, "Play with another", textColor);
     CheckTextSurface(PWAPSurface, window, renderer, font);
     SDL_Texture* PWAPTexture = SDL_CreateTextureFromSurface(renderer, PWAPSurface);
-    SDL_FreeSurface(PWAPSurface);
     CheckTextTexture(PWAPTexture, window, renderer, font);
     SDL_Rect PWAPRect = {(SCREEN_W - PWAPSurface->w) /2, Menu_L1Rect.h + 110, PWAPSurface->w, PWAPSurface->h};
-
+    SDL_FreeSurface(PWAPSurface);
+    
     SDL_Surface* PWAPSurface2 = TTF_RenderText_Solid(font, "player", textColor);
     CheckTextSurface(PWAPSurface2, window, renderer, font);
     SDL_Texture* PWAPTexture2 = SDL_CreateTextureFromSurface(renderer, PWAPSurface2);
-    SDL_FreeSurface(PWAPSurface2);
     CheckTextTexture(PWAPTexture2, window, renderer, font);
     SDL_Rect PWAPRect2 = {(SCREEN_W - PWAPRect.w) /2, Menu_L1Rect.h + 110 + PWAPSurface->h, PWAPSurface2->w, PWAPSurface2->h};
-
+    SDL_FreeSurface(PWAPSurface2);
+    
     SDL_Surface* PWTWSurface = TTF_RenderText_Solid(font, "Play with the wall", textColor);
     CheckTextSurface(PWTWSurface, window, renderer, font);
     SDL_Texture* PWTWTexture = SDL_CreateTextureFromSurface(renderer, PWTWSurface);
-    SDL_FreeSurface(PWTWSurface);
     CheckTextTexture(PWTWTexture, window, renderer, font);
     SDL_Rect PWTWRect = {(SCREEN_W - PWTWSurface->w) / 2, Menu_L1Rect.h + Menu_L2Rect.h + 183, PWTWSurface->w, PWTWSurface->h};
-
+    SDL_FreeSurface(PWTWSurface);
+    
     SDL_Surface* PAUASurface = TTF_RenderText_Solid(font, "Play against the", textColor);
     CheckTextSurface(PAUASurface, window, renderer, font);
     SDL_Texture* PAUATexture = SDL_CreateTextureFromSurface(renderer, PAUASurface);
-    SDL_FreeSurface(PAUASurface);
     CheckTextTexture(PAUATexture, window, renderer, font);
     SDL_Rect PAUARect = {(SCREEN_W - PAUASurface->w) / 2 - 20, Menu_L1Rect.h + Menu_L2Rect.h + 335, PAUASurface->w, PAUASurface->h};
-
+    SDL_FreeSurface(PAUASurface);
+    
     SDL_Surface* PAUASurface2 = TTF_RenderText_Solid(font, "unbeatable AI", textColor);
     CheckTextSurface(PAUASurface2, window, renderer, font);
     SDL_Texture* PAUATexture2 = SDL_CreateTextureFromSurface(renderer, PAUASurface2);
-    SDL_FreeSurface(PAUASurface2);
     CheckTextTexture(PAUATexture2, window, renderer, font);
     SDL_Rect PAUARect2 = {(SCREEN_W - PAUARect.w) / 2 - 20, Menu_L1Rect.h + Menu_L2Rect.h + 345 + PAUASurface->h, PAUASurface2->w, PAUASurface2->h};
-
+    SDL_FreeSurface(PAUASurface2);
+    
     float mov = 1;
 
     Mix_Chunk* MainMenu = Mix_LoadWAV("data/sound/MainMenu.wav");
@@ -199,34 +199,34 @@ void TitleScreen(SDL_Window* window, SDL_Renderer* renderer, PadState pad, bool 
     SDL_Surface *MainBackground = IMG_Load("data/logo_background.png");
     CheckImages(MainBackground, window, renderer);
     SDL_Texture *MainBackgroundTexture = SDL_CreateTextureFromSurface(renderer, MainBackground);
-    SDL_FreeSurface(MainBackground);
     CheckTexture(MainBackgroundTexture, window, renderer);
     SDL_Rect MainBackgroundRect = { 0, 0, MainBackground->w, MainBackground->h };
-
+    SDL_FreeSurface(MainBackground);
+    
     // Charger le logo
     SDL_Surface *Logo = IMG_Load("data/logo.png");
     CheckImages(Logo, window, renderer);
     SDL_Texture *LogoTexture = SDL_CreateTextureFromSurface(renderer, Logo);
-    SDL_FreeSurface(Logo);
     CheckTexture(LogoTexture, window, renderer);
     SDL_Rect LogoRect = { (SCREEN_W - Logo->w) / 2, Y_LOGO, Logo->w, Logo->h };
-
+    SDL_FreeSurface(Logo);
+    
     // Charger Press A
     SDL_Surface *Press_A = IMG_Load("data/Press_A.png");
     CheckImages(Press_A, window, renderer);
     SDL_Texture *Press_ATexture = SDL_CreateTextureFromSurface(renderer, Press_A);
-    SDL_FreeSurface(Press_A);
     CheckTexture(Press_ATexture, window, renderer);
     SDL_Rect Press_ARect = { (SCREEN_W - Press_A->w) / 2, (SCREEN_H - Press_A->h - 10), Press_A->w, Press_A->h };
-
+    SDL_FreeSurface(Press_A);
+    
     // Charger Author
     SDL_Surface *author = IMG_Load("data/author.png");
     CheckImages(author, window, renderer);
     SDL_Texture *authorTexture = SDL_CreateTextureFromSurface(renderer, author);
-    SDL_FreeSurface(author);
     CheckTexture(authorTexture, window, renderer);
     SDL_Rect authorRect = { (SCREEN_W - author->w - 10), (SCREEN_H - author->h - 10), author->w, author->h };
-
+    SDL_FreeSurface(author);
+    
     Mix_Chunk* Title = Mix_LoadWAV("data/sound/Title.wav");
     CheckSound(Title, window);
     Mix_PlayChannel(-1, Title, -1);
